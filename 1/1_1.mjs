@@ -9,20 +9,16 @@ const run = async () => {
     .split("\n")
     .filter(Boolean)
     .map((s) => parseInt(s, 10));
-  const result = input.reduce(
-    (carry, current, index, array) => {
-      if (index === 0) {
-        console.log(current + " ()");
-        return 0;
-      }
-      const prev = array[index - 1];
-      const add = current > prev ? 1 : 0;
-      console.log(`${current} (${add ? "increased" : ""})`);
-      return carry + add;
-    },
-    0,
-    input
-  );
+  const result = input.reduce((carry, current, index, array) => {
+    if (index === 0) {
+      // console.log(current + " ()");
+      return 0;
+    }
+    const prev = array[index - 1];
+    const add = current > prev ? 1 : 0;
+    // console.log(`${current} (${add ? "increased" : ""})`);
+    return carry + add;
+  }, 0);
 
   console.log(
     `${result} measurements are larger than the previous measurement`
