@@ -3,7 +3,7 @@ import path from "path";
 
 const run = async () => {
   const input = (
-    await fs.readFile(path.resolve(process.cwd(), ".\\1\\input.txt"))
+    await fs.readFile(path.resolve(process.cwd(), "1", "input.txt"))
   )
     .toString()
     .split("\n")
